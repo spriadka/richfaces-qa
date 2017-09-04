@@ -9,7 +9,8 @@ General Public License for more details. You should have received a copy of the 
 software; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA, or see the
 FSF site: http://www.fsf.org. -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -28,17 +29,22 @@ FSF site: http://www.fsf.org. -->
         <!-- default values according to http://docs.oracle.com/javase/7/docs/technotes/guides/net/ipv6_guide/index.html -->
         <jvm.args.ip>-Djava.net.preferIPv4Stack=false -Djava.net.preferIPv6Addresses=false</jvm.args.ip>
         <!-- jvm args for all containers without setting prefered IP -->
-        <arquillian.container.all.jvm.args>-Xms1024m -Xmx1024m -XX:MaxPermSize=512m -DstatelessViews=${statelessViews}</arquillian.container.all.jvm.args>
-        <arquillian.container.all.jvm.args.withIP>${arquillian.container.all.jvm.args} ${jvm.args.ip}</arquillian.container.all.jvm.args.withIP>
+        <arquillian.container.all.jvm.args>-Xms1024m -Xmx1024m -XX:MaxPermSize=512m -DstatelessViews=${statelessViews}
+        </arquillian.container.all.jvm.args>
+        <arquillian.container.all.jvm.args.withIP>${arquillian.container.all.jvm.args} ${jvm.args.ip}
+        </arquillian.container.all.jvm.args.withIP>
         <!-- following will be set as system properties -->
         <arquillian.container.jbossas.7-1.node0>127.0.0.1</arquillian.container.jbossas.7-1.node0>
         <arquillian.container.jbossas.7-1.jvm.args>${arquillian.container.all.jvm.args.withIP}
             -Djboss.bind.address=${arquillian.container.jbossas.7-1.node0}
             -Djboss.bind.address.management=${arquillian.container.jbossas.7-1.node0}
-            -Djboss.bind.address.unsecure=${arquillian.container.jbossas.7-1.node0}</arquillian.container.jbossas.7-1.jvm.args>
+            -Djboss.bind.address.unsecure=${arquillian.container.jbossas.7-1.node0}
+        </arquillian.container.jbossas.7-1.jvm.args>
 
         <templates>plain</templates>
-        <testng.listeners>org.richfaces.tests.metamer.ftest.extension.configurator.transformer.DataProviderTestTransformer,org.richfaces.tests.metamer.ftest.MetamerConsoleStatusTestListener,org.richfaces.tests.metamer.ftest.MetamerFailureLoggingTestListener,org.jboss.test.selenium.listener.BrowserConsoleLogSaverListener,org.richfaces.tests.metamer.ftest.utils.reporters.JUnitReportReporter,org.testng.reporters.XMLReporter</testng.listeners>
+        <testng.listeners>
+            org.richfaces.tests.metamer.ftest.extension.configurator.transformer.DataProviderTestTransformer,org.richfaces.tests.metamer.ftest.MetamerConsoleStatusTestListener,org.richfaces.tests.metamer.ftest.MetamerFailureLoggingTestListener,org.jboss.test.selenium.listener.BrowserConsoleLogSaverListener,org.richfaces.tests.metamer.ftest.utils.reporters.JUnitReportReporter,org.testng.reporters.XMLReporter
+        </testng.listeners>
         <testng.suite.xml>src/test/resources/testng/testng-all.xml</testng.suite.xml>
         <metamer-portlet.version>3.2.1.Final</metamer-portlet.version>
         <jboss-portal.version>7.1.3.Final</jboss-portal.version>
@@ -59,10 +65,10 @@ FSF site: http://www.fsf.org. -->
             <classifier>classes</classifier>
             <scope>test</scope>
             <exclusions>
-            	<exclusion>
-            		<groupId>com.google.guava</groupId>
-            		<artifactId>guava</artifactId>
-            	</exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <!-- Arquillian dependencies -->
@@ -72,10 +78,10 @@ FSF site: http://www.fsf.org. -->
             <type>pom</type>
             <scope>test</scope>
             <exclusions>
-            	<exclusion>
-            		<groupId>com.google.guava</groupId>
-            		<artifactId>guava</artifactId>
-            	</exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -89,10 +95,10 @@ FSF site: http://www.fsf.org. -->
             <version>${version.richfaces}</version>
             <scope>test</scope>
             <exclusions>
-            	<exclusion>
-            		<groupId>com.google.guava</groupId>
-            		<artifactId>guava</artifactId>
-            	</exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
 
@@ -102,10 +108,10 @@ FSF site: http://www.fsf.org. -->
             <artifactId>shrinkwrap-resolver-impl-maven</artifactId>
             <scope>test</scope>
             <exclusions>
-            	<exclusion>
-            		<groupId>com.google.guava</groupId>
-            		<artifactId>guava</artifactId>
-            	</exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
 
@@ -146,10 +152,10 @@ FSF site: http://www.fsf.org. -->
             <scope>test</scope>
             <version>${project.version}</version>
             <exclusions>
-            	<exclusion>
-            		<groupId>com.google.guava</groupId>
-            		<artifactId>guava</artifactId>
-            	</exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <!-- see the https://community.jboss.org/wiki/WhatsTheCauseOfThisExceptionJavalangClassFormatErrorAbsentCode -->
@@ -167,16 +173,16 @@ FSF site: http://www.fsf.org. -->
             <scope>test</scope>
             <type>jar</type>
         </dependency>
-        
+
         <dependency>
             <groupId>org.eu.ingwar.tools</groupId>
             <artifactId>arquillian-suite-extension</artifactId>
             <scope>test</scope>
             <exclusions>
-            	<exclusion>
-            		<groupId>com.google.guava</groupId>
-            		<artifactId>guava</artifactId>
-            	</exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
                 <exclusion>
                     <groupId>javassist</groupId>
                     <artifactId>javassist</artifactId>
@@ -200,8 +206,8 @@ FSF site: http://www.fsf.org. -->
                     <artifactId>jboss-logging</artifactId>
                 </exclusion>
                 <exclusion>
-                	<groupId>com.google.guava</groupId>
-                	<artifactId>guava</artifactId>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -215,14 +221,14 @@ FSF site: http://www.fsf.org. -->
                     <artifactId>jboss-logging</artifactId>
                 </exclusion>
                 <exclusion>
-                	<groupId>com.google.guava</groupId>
-                	<artifactId>guava</artifactId>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
         <dependency>
-        	<groupId>com.google.guava</groupId>
-        	<artifactId>guava</artifactId>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
         </dependency>
 
         <dependency>
@@ -243,7 +249,7 @@ FSF site: http://www.fsf.org. -->
 
     <build>
         <plugins>
-            <!-- saves all activated maven profiles to project property qa.activated.profiles --> 
+            <!-- saves all activated maven profiles to project property qa.activated.profiles -->
             <plugin>
                 <groupId>org.richfaces.tests</groupId>
                 <artifactId>richfaces-qa-maven-plugin</artifactId>
@@ -265,7 +271,8 @@ FSF site: http://www.fsf.org. -->
                     </suiteXmlFiles>
                     <!-- Logging configuration for Selenium , templates, ip -->
                     <argLine>-Djava.util.logging.config.file=${project.build.testOutputDirectory}/logging.properties
-                        -Dtemplates='${templates}' ${jvm.args.ip}</argLine>
+                        -Dtemplates='${templates}' ${jvm.args.ip}
+                    </argLine>
                     <properties>
                         <property>
                             <name>listener</name>
@@ -282,9 +289,12 @@ FSF site: http://www.fsf.org. -->
                         <logging.props.dir>${project.basedir}/src/test/resources</logging.props.dir>
                         <activated.maven.profiles>${qa.activated.profiles}</activated.maven.profiles>
 
-                        <arquillian.container.jbossas.7-1.node0>${arquillian.container.jbossas.7-1.node0}</arquillian.container.jbossas.7-1.node0>
-                        <arquillian.container.jbossas.7-1.jvm.args>${arquillian.container.jbossas.7-1.jvm.args}</arquillian.container.jbossas.7-1.jvm.args>
-                        <arquillian.container.all.jvm.args>${arquillian.container.all.jvm.args}</arquillian.container.all.jvm.args>
+                        <arquillian.container.jbossas.7-1.node0>${arquillian.container.jbossas.7-1.node0}
+                        </arquillian.container.jbossas.7-1.node0>
+                        <arquillian.container.jbossas.7-1.jvm.args>${arquillian.container.jbossas.7-1.jvm.args}
+                        </arquillian.container.jbossas.7-1.jvm.args>
+                        <arquillian.container.all.jvm.args>${arquillian.container.all.jvm.args}
+                        </arquillian.container.all.jvm.args>
 
                         <graphene.waitGuiInterval>${graphene.waitGuiInterval}</graphene.waitGuiInterval>
                         <graphene.waitAjaxInterval>${graphene.waitAjaxInterval}</graphene.waitAjaxInterval>
@@ -393,7 +403,7 @@ FSF site: http://www.fsf.org. -->
                             </execution>
                         </executions>
                     </plugin>
-                
+
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
@@ -444,7 +454,9 @@ FSF site: http://www.fsf.org. -->
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>org.richfaces.tests.metamer.ftest.extension.attributes.collector.ComponentsAttributesCollectorTool</mainClass>
+                                    <mainClass>
+                                        org.richfaces.tests.metamer.ftest.extension.attributes.collector.ComponentsAttributesCollectorTool
+                                    </mainClass>
                                     <classpathScope>test</classpathScope>
                                 </configuration>
                             </execution>
@@ -556,7 +568,8 @@ FSF site: http://www.fsf.org. -->
                                     <goal>process</goal>
                                 </goals>
                                 <configuration>
-                                    <jenkinsFirefoxConfigurationFile>../../jenkins-firefox-config.xml</jenkinsFirefoxConfigurationFile>
+                                    <jenkinsFirefoxConfigurationFile>../../jenkins-firefox-config.xml
+                                    </jenkinsFirefoxConfigurationFile>
                                 </configuration>
                             </execution>
                         </executions>
@@ -572,7 +585,8 @@ FSF site: http://www.fsf.org. -->
                                 <!-- path to WebDriver IE driver binary -->
                                 <webdriver.ie.driver>${qa.ie.driver.bin}</webdriver.ie.driver>
                                 <!-- name of the browser, will be passed to Arquillian -->
-                                <arq.extension.webdriver.browser>${qa.webdriver.browser}</arq.extension.webdriver.browser>
+                                <arq.extension.webdriver.browser>${qa.webdriver.browser}
+                                </arq.extension.webdriver.browser>
                             </systemProperties>
                         </configuration>
                     </plugin>

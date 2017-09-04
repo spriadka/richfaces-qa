@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- JBoss, Home of Professional Open Source Copyright 2010-2016, Red Hat, Inc. and individual contributors by the @authors tag. 
-See the copyright.txt in the distribution for a full listing of individual contributors. This is free software; you can redistribute 
-it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either 
-version 2.1 of the License, or (at your option) any later version. This software is distributed in the hope that it will be useful, 
-but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser 
-General Public License for more details. You should have received a copy of the GNU Lesser General Public License along with this 
-software; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA, or see the 
+<!-- JBoss, Home of Professional Open Source Copyright 2010-2016, Red Hat, Inc. and individual contributors by the @authors tag.
+See the copyright.txt in the distribution for a full listing of individual contributors. This is free software; you can redistribute
+it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version. This software is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser
+General Public License for more details. You should have received a copy of the GNU Lesser General Public License along with this
+software; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA, or see the
 FSF site: http://www.fsf.org. -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -28,10 +29,16 @@ FSF site: http://www.fsf.org. -->
         <jetty.port>8080</jetty.port>
         <version.hornetq>2.2.13.Final</version.hornetq>
         <version.jstlapi>1.2-rev-1</version.jstlapi>
-        <jee6.excluded.libraries>WEB-INF/lib/javax.faces-*,WEB-INF/lib/jsf-api-*,WEB-INF/lib/jsf-impl-*,WEB-INF/lib/myfaces-api-*,WEB-INF/lib/myfaces-impl-*,WEB-INF/lib/validation-api-*,WEB-INF/lib/hibernate-validator-*,WEB-INF/lib/jsp-api*,WEB-INF/lib/slf4j*,WEB-INF/lib/log4j*,WEB-INF/lib/cdi-api*,WEB-INF/lib/jboss-interceptors-api_1.1_spec*,WEB-INF/lib/jsr250-api*,WEB-INF/lib/javax.inject*,WEB-INF/lib/weld-servlet*,WEB-INF/lib/jboss-as-controller-client*,WEB-INF/lib/jstl-api-*</jee6.excluded.libraries>
-        <tomcat-mojarra.excluded.libraries>WEB-INF/lib/myfaces-api-*,WEB-INF/lib/myfaces-impl-*,WEB-INF/lib/jsp-api*,WEB-INF/lib/jboss-as-controller-client*</tomcat-mojarra.excluded.libraries>
-        <tomcat-myfaces.excluded.libraries>WEB-INF/lib/javax.faces-*,WEB-INF/lib/jsf-api-*,WEB-INF/lib/jsf-impl-*,WEB-INF/lib/jsp-api*,WEB-INF/lib/jboss-as-controller-client*</tomcat-myfaces.excluded.libraries>
-        <prepareExplodedWar.filesToDelete />
+        <jee6.excluded.libraries>
+            WEB-INF/lib/javax.faces-*,WEB-INF/lib/jsf-api-*,WEB-INF/lib/jsf-impl-*,WEB-INF/lib/myfaces-api-*,WEB-INF/lib/myfaces-impl-*,WEB-INF/lib/validation-api-*,WEB-INF/lib/hibernate-validator-*,WEB-INF/lib/jsp-api*,WEB-INF/lib/slf4j*,WEB-INF/lib/log4j*,WEB-INF/lib/cdi-api*,WEB-INF/lib/jboss-interceptors-api_1.1_spec*,WEB-INF/lib/jsr250-api*,WEB-INF/lib/javax.inject*,WEB-INF/lib/weld-servlet*,WEB-INF/lib/jboss-as-controller-client*,WEB-INF/lib/jstl-api-*
+        </jee6.excluded.libraries>
+        <tomcat-mojarra.excluded.libraries>
+            WEB-INF/lib/myfaces-api-*,WEB-INF/lib/myfaces-impl-*,WEB-INF/lib/jsp-api*,WEB-INF/lib/jboss-as-controller-client*
+        </tomcat-mojarra.excluded.libraries>
+        <tomcat-myfaces.excluded.libraries>
+            WEB-INF/lib/javax.faces-*,WEB-INF/lib/jsf-api-*,WEB-INF/lib/jsf-impl-*,WEB-INF/lib/jsp-api*,WEB-INF/lib/jboss-as-controller-client*
+        </tomcat-myfaces.excluded.libraries>
+        <prepareExplodedWar.filesToDelete/>
     </properties>
 
     <dependencies>
@@ -40,13 +47,13 @@ FSF site: http://www.fsf.org. -->
             <artifactId>richfaces</artifactId>
             <version>${version.richfaces}</version>
         </dependency>
-        
+
         <dependency>
             <groupId>org.richfaces</groupId>
             <artifactId>richfaces-push-depchain</artifactId>
             <type>pom</type>
         </dependency>
-        
+
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
@@ -86,7 +93,7 @@ FSF site: http://www.fsf.org. -->
             <artifactId>jstl-api</artifactId>
             <version>${version.jstlapi}</version>
         </dependency>
-        
+
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
@@ -198,7 +205,9 @@ FSF site: http://www.fsf.org. -->
                         </manifest>
                         <manifestEntries>
                             <!-- define SLF4J dependency in JBoss AS 7 -->
-                            <Dependencies>org.slf4j,org.jboss.as.process-controller,org.jboss.as.controller-client,org.jboss.dmr</Dependencies>
+                            <Dependencies>
+                                org.slf4j,org.jboss.as.process-controller,org.jboss.as.controller-client,org.jboss.dmr
+                            </Dependencies>
                         </manifestEntries>
                     </archive>
                 </configuration>
@@ -262,7 +271,8 @@ FSF site: http://www.fsf.org. -->
         <profile>
             <id>war-tomcat-mojarra</id>
             <properties>
-                <prepareExplodedWar.filesToDelete>${tomcat-mojarra.excluded.libraries}</prepareExplodedWar.filesToDelete>
+                <prepareExplodedWar.filesToDelete>${tomcat-mojarra.excluded.libraries}
+                </prepareExplodedWar.filesToDelete>
             </properties>
             <build>
                 <plugins>
@@ -291,7 +301,8 @@ FSF site: http://www.fsf.org. -->
         <profile>
             <id>war-tomcat-myfaces</id>
             <properties>
-                <prepareExplodedWar.filesToDelete>${tomcat-myfaces.excluded.libraries}</prepareExplodedWar.filesToDelete>
+                <prepareExplodedWar.filesToDelete>${tomcat-myfaces.excluded.libraries}
+                </prepareExplodedWar.filesToDelete>
             </properties>
             <build>
                 <plugins>
@@ -345,9 +356,10 @@ FSF site: http://www.fsf.org. -->
                                 <phase>package</phase>
                                 <configuration>
                                     <target>
-                                        <echo message="deleting from folder: ${basedir}/target/metamer/ , files: ${prepareExplodedWar.filesToDelete}" />
+                                        <echo message="deleting from folder: ${basedir}/target/metamer/ , files: ${prepareExplodedWar.filesToDelete}"/>
                                         <delete>
-                                            <fileset dir="${basedir}/target/metamer/" includes="${prepareExplodedWar.filesToDelete}" />
+                                            <fileset dir="${basedir}/target/metamer/"
+                                                     includes="${prepareExplodedWar.filesToDelete}"/>
                                         </delete>
                                     </target>
                                 </configuration>
